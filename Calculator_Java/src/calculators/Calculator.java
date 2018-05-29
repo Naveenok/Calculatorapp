@@ -52,13 +52,25 @@ public class Calculator {
 		
 		JButton btn7 = new JButton("7");
 		btn7.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btn7.setBounds(26, 72, 50, 50);
+		btn7.setBounds(10, 54, 50, 50);
 		frame.getContentPane().add(btn7);
 		
 		JButton btn8 = new JButton("8");
 		btn8.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btn8.setBounds(86, 72, 50, 50);
+		btn8.setBounds(66, 54, 50, 50);
 		frame.getContentPane().add(btn8);
+		
+		JButton btn9=new JButton("9");
+		btn9.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btn9.setBounds(122, 54, 50, 50);
+		frame.getContentPane().add(btn9);
+		
+		JButton btnPlus=new JButton("+");
+		btnPlus.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnPlus.setBounds(178, 54, 50, 50);
+		frame.getContentPane().add(btnPlus);
+		
+		
 		
 		
 	}
