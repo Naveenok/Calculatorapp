@@ -85,10 +85,7 @@ public class Calculator {
 		btn6.setBounds(114, 189, 50, 50);
 		frame.getContentPane().add(btn6);
 
-		JButton btnsub = new JButton("-");
-		btnsub.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnsub.setBounds(166, 189, 50, 50);
-		frame.getContentPane().add(btnsub);
+		 	
 
 		JButton btn1 = new JButton("1");
 		btn1.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -120,31 +117,30 @@ public class Calculator {
 		btndot.setBounds(62, 291, 50, 50);
 		frame.getContentPane().add(btndot);
 
-		JButton btnPM = new JButton("+-");
-		btnPM.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnPM.setBounds(114, 291, 50, 50);
-		frame.getContentPane().add(btnPM);
-
 		JButton btnequal = new JButton("=");
 		btnequal.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnequal.setBounds(166, 291, 50, 50);
+		btnequal.setBounds(114, 291, 102, 50);
 		frame.getContentPane().add(btnequal);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(166, 137, 50, 50);
-		frame.getContentPane().add(btnNewButton);
+		JButton btnsub = new JButton("-");
+		btnsub.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnsub.setBounds(166, 137, 50, 50);
+		frame.getContentPane().add(btnsub);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(114, 86, 50, 50);
-		frame.getContentPane().add(btnNewButton_1);
+		JButton btnclr = new JButton("Clr");
+		btnclr.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnclr.setBounds(62, 86, 102, 50);
+		frame.getContentPane().add(btnclr);
 		
-		JButton btnNewButton_2 = new JButton("New button");
-		btnNewButton_2.setBounds(62, 86, 50, 50);
-		frame.getContentPane().add(btnNewButton_2);
+		JButton btnarrow = new JButton("<");
+		btnarrow.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btnarrow.setBounds(10, 86, 50, 50);
+		frame.getContentPane().add(btnarrow);
 		
-		JButton btnNewButton_3 = new JButton("New button");
-		btnNewButton_3.setBounds(10, 86, 50, 50);
-		frame.getContentPane().add(btnNewButton_3);
+		JButton btndiv = new JButton("/");
+		btndiv.setFont(new Font("Tahoma", Font.BOLD, 20));
+		btndiv.setBounds(166, 189, 50, 50);
+		frame.getContentPane().add(btndiv);
 
 	}
 }
