@@ -55,8 +55,8 @@ public class Calculator {
 		JButton btn7 = new JButton("7");
 		btn7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				String Enternumber=textField.getText()+btn7.getText();
+
+				String Enternumber = textField.getText() + btn7.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -67,8 +67,8 @@ public class Calculator {
 		JButton btn8 = new JButton("8");
 		btn8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				String Enternumber=textField.getText()+btn8.getText();
+
+				String Enternumber = textField.getText() + btn8.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -79,7 +79,7 @@ public class Calculator {
 		JButton btn9 = new JButton("9");
 		btn9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn9.getText();
+				String Enternumber = textField.getText() + btn9.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -95,7 +95,7 @@ public class Calculator {
 		JButton btn4 = new JButton("4");
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn4.getText();
+				String Enternumber = textField.getText() + btn4.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -106,7 +106,7 @@ public class Calculator {
 		JButton btn5 = new JButton("5");
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn5.getText();
+				String Enternumber = textField.getText() + btn5.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -117,7 +117,7 @@ public class Calculator {
 		JButton btn6 = new JButton("6");
 		btn6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn6.getText();
+				String Enternumber = textField.getText() + btn6.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -125,12 +125,10 @@ public class Calculator {
 		btn6.setBounds(114, 189, 50, 50);
 		frame.getContentPane().add(btn6);
 
-		 	
-
 		JButton btn1 = new JButton("1");
 		btn1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn1.getText();
+				String Enternumber = textField.getText() + btn1.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -141,7 +139,7 @@ public class Calculator {
 		JButton btn2 = new JButton("2");
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn2.getText();
+				String Enternumber = textField.getText() + btn2.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -152,7 +150,7 @@ public class Calculator {
 		JButton btn3 = new JButton("3");
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btn3.getText();
+				String Enternumber = textField.getText() + btn3.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -168,7 +166,7 @@ public class Calculator {
 		JButton btnzero = new JButton("0");
 		btnzero.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText()+btnzero.getText();
+				String Enternumber = textField.getText() + btnzero.getText();
 				textField.setText(Enternumber);
 			}
 		});
@@ -185,36 +183,42 @@ public class Calculator {
 		btnequal.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnequal.setBounds(114, 291, 102, 50);
 		frame.getContentPane().add(btnequal);
-		
+
 		JButton btnsub = new JButton("-");
 		btnsub.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnsub.setBounds(166, 137, 50, 50);
 		frame.getContentPane().add(btnsub);
-		
+
 		JButton btnclr = new JButton("Clr");
 		btnclr.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=null;
+				String Enternumber = null;
 				textField.setText(Enternumber);
-				
+
 			}
 		});
 		btnclr.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnclr.setBounds(62, 86, 102, 50);
 		frame.getContentPane().add(btnclr);
-		
+
 		JButton btnarrow = new JButton("<");
 		btnarrow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Enternumber=textField.getText();
-			
-			/*	textField.*/
+				String Enternumber = textField.getText();
+				if (Enternumber.length() > 0) {
+					textField.setText(Enternumber.substring(0, Enternumber.length() - 1));
+					if (Enternumber.length() <= 0) {
+
+						textField.setText(null);
+					}
+					/* textField. */
+				}
 			}
 		});
 		btnarrow.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnarrow.setBounds(10, 86, 50, 50);
 		frame.getContentPane().add(btnarrow);
-		
+
 		JButton btndiv = new JButton("/");
 		btndiv.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btndiv.setBounds(166, 189, 50, 50);
