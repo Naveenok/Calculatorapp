@@ -6,6 +6,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Calculator {
 
@@ -51,11 +53,25 @@ public class Calculator {
 		textField.setColumns(10);
 
 		JButton btn7 = new JButton("7");
+		btn7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String Enternumber=textField.getText()+btn7.getText();
+				textField.setText(Enternumber);
+			}
+		});
 		btn7.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btn7.setBounds(10, 137, 50, 50);
 		frame.getContentPane().add(btn7);
 
 		JButton btn8 = new JButton("8");
+		btn8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				String Enternumber=textField.getText()+btn8.getText();
+				textField.setText(Enternumber);
+			}
+		});
 		btn8.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btn8.setBounds(62, 137, 50, 50);
 		frame.getContentPane().add(btn8);
@@ -128,6 +144,13 @@ public class Calculator {
 		frame.getContentPane().add(btnsub);
 		
 		JButton btnclr = new JButton("Clr");
+		btnclr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String Enternumber=null;
+				textField.setText(Enternumber);
+				
+			}
+		});
 		btnclr.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnclr.setBounds(62, 86, 102, 50);
 		frame.getContentPane().add(btnclr);
