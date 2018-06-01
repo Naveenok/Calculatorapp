@@ -13,7 +13,12 @@ public class Calculator {
 
 	private JFrame frame;
 	private JTextField textField;
-
+	
+	double first_num;
+	double second_num;
+	double result;
+	String operations;
+	String answer;
 	/**
 	 * Launch the application.
 	 */
@@ -90,8 +95,9 @@ public class Calculator {
 		JButton btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String number1=textField.getText();
-				textField.setText(null);
+				first_num=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations="+";	
 				 
 			}
 		});
@@ -166,6 +172,13 @@ public class Calculator {
 		frame.getContentPane().add(btn3);
 
 		JButton btnmul = new JButton("*");
+		btnmul.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first_num=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations="*";	
+			}
+		});
 		btnmul.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnmul.setBounds(166, 240, 50, 50);
 		frame.getContentPane().add(btnmul);
@@ -195,11 +208,22 @@ public class Calculator {
 		frame.getContentPane().add(btndot);
 
 		JButton btnequal = new JButton("=");
+		btnequal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnequal.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnequal.setBounds(114, 291, 102, 50);
+		btnequal.setBounds(166, 291, 50, 50);
 		frame.getContentPane().add(btnequal);
 
 		JButton btnsub = new JButton("-");
+		btnsub.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first_num=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations="-";	
+			}
+		});
 		btnsub.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnsub.setBounds(166, 137, 50, 50);
 		frame.getContentPane().add(btnsub);
@@ -235,9 +259,25 @@ public class Calculator {
 		frame.getContentPane().add(btnarrow);
 
 		JButton btndiv = new JButton("/");
+		btndiv.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				first_num=Double.parseDouble(textField.getText());
+				textField.setText("");
+				operations="/";	
+			}
+		});
 		btndiv.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btndiv.setBounds(166, 189, 50, 50);
 		frame.getContentPane().add(btndiv);
+		
+		JButton btnNewButton = new JButton("+-");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBounds(114, 291, 50, 50);
+		frame.getContentPane().add(btnNewButton);
 
 	}
 }
