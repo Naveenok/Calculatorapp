@@ -88,6 +88,13 @@ public class Calculator {
 		frame.getContentPane().add(btn9);
 
 		JButton btnPlus = new JButton("+");
+		btnPlus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String number1=textField.getText();
+				textField.setText(null);
+				 
+			}
+		});
 		btnPlus.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnPlus.setBounds(166, 86, 50, 50);
 		frame.getContentPane().add(btnPlus);
@@ -175,6 +182,14 @@ public class Calculator {
 		frame.getContentPane().add(btnzero);
 
 		JButton btndot = new JButton(".");
+		btndot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(!textField.getText().contains("."))
+		          {
+		          textField.setText(textField.getText() + btndot.getText());
+		          }
+			}
+		});
 		btndot.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btndot.setBounds(62, 291, 50, 50);
 		frame.getContentPane().add(btndot);
