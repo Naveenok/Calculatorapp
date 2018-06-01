@@ -96,11 +96,13 @@ public class Calculator {
 		JButton btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				first_num = Double.parseDouble(textField.getText());
 				textField.setText("");
 				operations = "+";
 
 			}
+
 		});
 		btnPlus.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btnPlus.setBounds(166, 86, 50, 50);
@@ -210,6 +212,25 @@ public class Calculator {
 		JButton btnequal = new JButton("=");
 		btnequal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String answer;
+				second_num = Double.parseDouble(textField.getText());
+				if (operations == "+") {
+					result = first_num + second_num;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				} else if (operations == "-") {
+					result = first_num - second_num;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				} else if (operations == "*") {
+					result = first_num * second_num;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				} else if (operations == "/") {
+					result = first_num / second_num;
+					answer = String.format("%.2f", result);
+					textField.setText(answer);
+				}
 			}
 		});
 		btnequal.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -275,17 +296,17 @@ public class Calculator {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String tex = textField.getText();
-				if(!(tex.isEmpty())){
-				if (!tex.contains(".")) {
-					Integer b = Integer.parseInt(tex) * (-1);
-					textField.setText(String.valueOf(b));
+				if (!(tex.isEmpty())) {
+					if (!tex.contains(".")) {
+						Integer b = Integer.parseInt(tex) * (-1);
+						textField.setText(String.valueOf(b));
+					}
+					if (tex.contains(".") && tex.length() > 1) {
+						Double d = Double.parseDouble(tex) * -1;
+						textField.setText(String.valueOf(d));
+					}
 				}
-				if (tex.contains(".") && tex.length()>1){
-					Double d = Double.parseDouble(tex) * -1;
-					textField.setText(String.valueOf(d));
-				}
-				}
-				//changes made in function
+				// changes made in function
 
 			}
 		});
