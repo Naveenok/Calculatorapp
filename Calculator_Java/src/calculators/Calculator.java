@@ -96,11 +96,11 @@ public class Calculator {
 		JButton btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				first_num = Double.parseDouble(textField.getText());
-				textField.setText("");
-				operations = "+";
-
+				if (!(textField.getText().isEmpty())) {
+					first_num = Double.parseDouble(textField.getText());
+					textField.setText("");
+					operations = "+";
+				}
 			}
 
 		});
@@ -177,9 +177,11 @@ public class Calculator {
 		JButton btnmul = new JButton("*");
 		btnmul.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num = Double.parseDouble(textField.getText());
-				textField.setText("");
-				operations = "*";
+				if (!(textField.getText().isEmpty())) {
+					first_num = Double.parseDouble(textField.getText());
+					textField.setText("");
+					operations = "*";
+				}
 			}
 		});
 		btnmul.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -212,24 +214,26 @@ public class Calculator {
 		JButton btnequal = new JButton("=");
 		btnequal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String answer;
-				second_num = Double.parseDouble(textField.getText());
-				if (operations == "+") {
-					result = first_num + second_num;
-					answer = String.format("%.2f", result);
-					textField.setText(answer);
-				} else if (operations == "-") {
-					result = first_num - second_num;
-					answer = String.format("%.2f", result);
-					textField.setText(answer);
-				} else if (operations == "*") {
-					result = first_num * second_num;
-					answer = String.format("%.2f", result);
-					textField.setText(answer);
-				} else if (operations == "/") {
-					result = first_num / second_num;
-					answer = String.format("%.2f", result);
-					textField.setText(answer);
+				if (!(textField.getText().isEmpty())) {
+					String answer;
+					second_num = Double.parseDouble(textField.getText());
+					if (operations == "+") {
+						result = first_num + second_num;
+						answer = String.format("%.2f", result);
+						textField.setText(answer);
+					} else if (operations == "-") {
+						result = first_num - second_num;
+						answer = String.format("%.2f", result);
+						textField.setText(answer);
+					} else if (operations == "*") {
+						result = first_num * second_num;
+						answer = String.format("%.2f", result);
+						textField.setText(answer);
+					} else if (operations == "/") {
+						result = first_num / second_num;
+						answer = String.format("%.2f", result);
+						textField.setText(answer);
+					}
 				}
 			}
 		});
@@ -240,9 +244,11 @@ public class Calculator {
 		JButton btnsub = new JButton("-");
 		btnsub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num = Double.parseDouble(textField.getText());
-				textField.setText("");
-				operations = "-";
+				if (!(textField.getText().isEmpty())) {
+					first_num = Double.parseDouble(textField.getText());
+					textField.setText("");
+					operations = "-";
+				}
 			}
 		});
 		btnsub.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -282,9 +288,11 @@ public class Calculator {
 		JButton btndiv = new JButton("/");
 		btndiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num = Double.parseDouble(textField.getText());
-				textField.setText("");
-				operations = "/";
+				if (!(textField.getText().isEmpty())) {
+					first_num = Double.parseDouble(textField.getText());
+					textField.setText("");
+					operations = "/";
+				}
 			}
 		});
 		btndiv.setFont(new Font("Tahoma", Font.BOLD, 20));
