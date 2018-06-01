@@ -274,10 +274,25 @@ public class Calculator {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String a=textField.getText();
+				if(!a.contains(".")){
+				Integer b=Integer.parseInt(a)*(-1);
+				textField.setText(String.valueOf(b));
+				}
+				if(a.contains(".")){
+				Double d=Double.parseDouble(a)*-1;
+				textField.setText(String.valueOf(d));
+				}
+				
+				
+				/*double ops=Double.parseDouble(String.valueOf(textField.getText()));
+				ops=ops*(-1);
+				textField.setText(String.valueOf(ops))*/;
 			}
 		});
 		btnNewButton.setBounds(114, 291, 50, 50);
 		frame.getContentPane().add(btnNewButton);
+		
 
 	}
 }
