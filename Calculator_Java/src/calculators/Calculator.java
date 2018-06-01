@@ -13,12 +13,13 @@ public class Calculator {
 
 	private JFrame frame;
 	private JTextField textField;
-	
+
 	double first_num;
 	double second_num;
 	double result;
 	String operations;
 	String answer;
+
 	/**
 	 * Launch the application.
 	 */
@@ -95,10 +96,10 @@ public class Calculator {
 		JButton btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num=Double.parseDouble(textField.getText());
+				first_num = Double.parseDouble(textField.getText());
 				textField.setText("");
-				operations="+";	
-				 
+				operations = "+";
+
 			}
 		});
 		btnPlus.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -174,9 +175,9 @@ public class Calculator {
 		JButton btnmul = new JButton("*");
 		btnmul.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num=Double.parseDouble(textField.getText());
+				first_num = Double.parseDouble(textField.getText());
 				textField.setText("");
-				operations="*";	
+				operations = "*";
 			}
 		});
 		btnmul.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -197,10 +198,9 @@ public class Calculator {
 		JButton btndot = new JButton(".");
 		btndot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(!textField.getText().contains("."))
-		          {
-		          textField.setText(textField.getText() + btndot.getText());
-		          }
+				if (!textField.getText().contains(".")) {
+					textField.setText(textField.getText() + btndot.getText());
+				}
 			}
 		});
 		btndot.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -219,9 +219,9 @@ public class Calculator {
 		JButton btnsub = new JButton("-");
 		btnsub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num=Double.parseDouble(textField.getText());
+				first_num = Double.parseDouble(textField.getText());
 				textField.setText("");
-				operations="-";	
+				operations = "-";
 			}
 		});
 		btnsub.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -261,38 +261,36 @@ public class Calculator {
 		JButton btndiv = new JButton("/");
 		btndiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				first_num=Double.parseDouble(textField.getText());
+				first_num = Double.parseDouble(textField.getText());
 				textField.setText("");
-				operations="/";	
+				operations = "/";
 			}
 		});
 		btndiv.setFont(new Font("Tahoma", Font.BOLD, 20));
 		btndiv.setBounds(166, 189, 50, 50);
 		frame.getContentPane().add(btndiv);
-		
+
 		JButton btnNewButton = new JButton("+-");
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String a=textField.getText();
-				if(!a.contains(".")){
-				Integer b=Integer.parseInt(a)*(-1);
-				textField.setText(String.valueOf(b));
+				String tex = textField.getText();
+				if(!(tex.isEmpty())){
+				if (!tex.contains(".")) {
+					Integer b = Integer.parseInt(tex) * (-1);
+					textField.setText(String.valueOf(b));
 				}
-				if(a.contains(".")){
-				Double d=Double.parseDouble(a)*-1;
-				textField.setText(String.valueOf(d));
+				if (tex.contains(".") && tex.length()>1){
+					Double d = Double.parseDouble(tex) * -1;
+					textField.setText(String.valueOf(d));
 				}
-				
-				
-				/*double ops=Double.parseDouble(String.valueOf(textField.getText()));
-				ops=ops*(-1);
-				textField.setText(String.valueOf(ops))*/;
+				}
+				//changes made in function
+
 			}
 		});
 		btnNewButton.setBounds(114, 291, 50, 50);
 		frame.getContentPane().add(btnNewButton);
-		
 
 	}
 }
