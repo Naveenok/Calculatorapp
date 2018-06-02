@@ -2,21 +2,26 @@ package calculators;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
+/**
+ * @author Naveen_Kumaravelmurugaian
+ *
+ */
 public class Calculator {
 
 	private JFrame frame;
 	private JTextField textField;
 
-	double first_num;
-	double second_num;
-	double result;
+	double first_num = 0.0;
+	double second_num = 0.0;
+	// double third_num = 0.0;
+	double result = 0.0;
 	String operations;
 	String answer;
 
@@ -96,7 +101,7 @@ public class Calculator {
 		JButton btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!(textField.getText().isEmpty())) {
+				if (!(textField.getText().isEmpty()) && !(textField.getText().substring(0, 1).contains("."))) {
 					first_num = Double.parseDouble(textField.getText());
 					textField.setText("");
 					operations = "+";
@@ -177,7 +182,7 @@ public class Calculator {
 		JButton btnmul = new JButton("*");
 		btnmul.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!(textField.getText().isEmpty())) {
+				if (!(textField.getText().isEmpty()) && !(textField.getText().substring(0, 1).contains("."))) {
 					first_num = Double.parseDouble(textField.getText());
 					textField.setText("");
 					operations = "*";
@@ -205,6 +210,9 @@ public class Calculator {
 				if (!textField.getText().contains(".")) {
 					textField.setText(textField.getText() + btndot.getText());
 				}
+				if(textField.getText().substring(0, 1).contains(".")){
+					textField.setText("0.");
+				}
 			}
 		});
 		btndot.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -214,25 +222,25 @@ public class Calculator {
 		JButton btnequal = new JButton("=");
 		btnequal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!(textField.getText().isEmpty())) {
-					String answer;
+				if (!(textField.getText().isEmpty()) && !(textField.getText().substring(0, 1).contains("."))) {
+					// String answer;
 					second_num = Double.parseDouble(textField.getText());
 					if (operations == "+") {
 						result = first_num + second_num;
-						answer = String.format("%.2f", result);
-						textField.setText(answer);
+						// answer = String.format("%.2f", result);
+						textField.setText(Double.toString(result));
 					} else if (operations == "-") {
 						result = first_num - second_num;
-						answer = String.format("%.2f", result);
-						textField.setText(answer);
+						// answer = String.format("%.2f", result);
+						textField.setText(Double.toString(result));
 					} else if (operations == "*") {
 						result = first_num * second_num;
-						answer = String.format("%.2f", result);
-						textField.setText(answer);
+						// answer = String.format("%.2f", result);
+						textField.setText(Double.toString(result));
 					} else if (operations == "/") {
 						result = first_num / second_num;
-						answer = String.format("%.2f", result);
-						textField.setText(answer);
+						// answer = String.format("%.2f", result);
+						textField.setText(Double.toString(result));
 					}
 				}
 			}
@@ -244,7 +252,7 @@ public class Calculator {
 		JButton btnsub = new JButton("-");
 		btnsub.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!(textField.getText().isEmpty())) {
+				if (!(textField.getText().isEmpty()) && !(textField.getText().substring(0, 1).contains("."))) {
 					first_num = Double.parseDouble(textField.getText());
 					textField.setText("");
 					operations = "-";
@@ -260,6 +268,11 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				String Enternumber = null;
 				textField.setText(Enternumber);
+				first_num = 0.0;
+				second_num = 0.0;
+				result = 0.0;
+				String operations = null;
+				String answer = null;
 
 			}
 		});
@@ -288,7 +301,7 @@ public class Calculator {
 		JButton btndiv = new JButton("/");
 		btndiv.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (!(textField.getText().isEmpty())) {
+				if (!(textField.getText().isEmpty()) && !(textField.getText().substring(0, 1).contains("."))) {
 					first_num = Double.parseDouble(textField.getText());
 					textField.setText("");
 					operations = "/";
@@ -300,7 +313,7 @@ public class Calculator {
 		frame.getContentPane().add(btndiv);
 
 		JButton btnNewButton = new JButton("+-");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String tex = textField.getText();
