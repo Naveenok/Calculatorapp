@@ -328,6 +328,7 @@ public class Calculator {
 					}
 				}
 				// changes made in function
+				//final product made
 
 			}
 		});
